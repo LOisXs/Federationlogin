@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enigma</title>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+  <h1 class="enigma-title">LOGIN</h1>
+  <div class="enigma-image-container">
+  
+  </div>
+  <div class="answer-box">
+    <input type="text" id="answer1" class="answer-input" placeholder="usuário" />
+  </div>
+  <div class="answer-box">
+    <input type="text" id="answer2" class="answer-input" placeholder="senha" />
+  </div>
+  <button onclick="checkAnswers()" class="answer-button">Enviar</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<head>
+<style>
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.enigma-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.enigma-image-container {
+  margin-bottom: 20px;
+}
+
+.enigma-image {
+  max-width: 10%;
+  scale: 2;
+}
+
+.answer-box {
+  width: 300px;
+  height: 50px;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.answer-input {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 0 10px;
+}
+
+.answer-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.answer-button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.answer-button:hover {
+  background-color: gray;
+}
+</style>
+</head>
+
+
+<script>
+function checkAnswers() {
+  var answer1 = document.getElementById('answer1').value.toLowerCase();
+  var answer2 = document.getElementById('answer2').value.toLowerCase();
+
+  if (answer1 === 'resposta1'  && answer2 === 'resposta2') {
+    window.location.href = 'outra-pagina.html';
+  } else {
+    alert('login e senha incorretas. Tente novamente!');
+  }
+}
+</script>
